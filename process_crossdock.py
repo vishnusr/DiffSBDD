@@ -19,8 +19,8 @@ import torch
 
 from analysis.molecule_builder import build_molecule
 from analysis.metrics import rdmol_to_smiles
-import constants
-from constants import covalent_radii, dataset_params
+import diffsbdd_constants
+from diffsbdd_constants import covalent_radii, dataset_params
 
 
 def process_ligand_and_pocket(pdbfile, sdffile,
@@ -166,7 +166,7 @@ def get_n_nodes(lig_mask, pocket_mask, smooth_sigma=None):
 def get_bond_length_arrays(atom_mapping):
     bond_arrays = []
     for i in range(3):
-        bond_dict = getattr(constants, f'bonds{i + 1}')
+        bond_dict = getattr(diffsbdd_constants, f'bonds{i + 1}')
         bond_array = np.zeros((len(atom_mapping), len(atom_mapping)))
         for a1 in atom_mapping.keys():
             for a2 in atom_mapping.keys():
@@ -190,7 +190,7 @@ def get_lennard_jones_rm(atom_mapping):
         for a2 in atom_mapping.keys():
             all_bond_lengths = []
             for btype in ['bonds1', 'bonds2', 'bonds3']:
-                bond_dict = getattr(constants, btype)
+                bond_dict = getattr(diffsbdd_constants, btype)
                 if a1 in bond_dict and a2 in bond_dict[a1]:
                     all_bond_lengths.append(bond_dict[a1][a2])
 

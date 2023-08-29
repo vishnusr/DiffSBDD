@@ -9,7 +9,7 @@ from torch_scatter import scatter_mean
 
 import utils
 from lightning_modules import LigandPocketDDPM
-from constants import FLOAT_TYPE, INT_TYPE
+from diffsbdd_constants import FLOAT_TYPE, INT_TYPE
 from analysis.molecule_builder import build_molecule, process_molecule
 
 

@@ -8,7 +8,7 @@ from rdkit.Chem.rdForceFieldHelpers import UFFOptimizeMolecule, UFFHasAllMolecul
 import openbabel
 
 import utils
-from constants import bonds1, bonds2, bonds3, margin1, margin2, margin3, \
+from diffsbdd_constants import bonds1, bonds2, bonds3, margin1, margin2, margin3, \
     bond_dict
 
 

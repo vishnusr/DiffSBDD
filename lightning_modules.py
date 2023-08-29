@@ -14,7 +14,7 @@ from torch_scatter import scatter_add, scatter_mean
 from Bio.PDB import PDBParser
 from Bio.PDB.Polypeptide import three_to_one
 
-from constants import dataset_params, FLOAT_TYPE, INT_TYPE
+from diffsbdd_constants import dataset_params, FLOAT_TYPE, INT_TYPE
 from equivariant_diffusion.dynamics import EGNNDynamics
 from equivariant_diffusion.en_diffusion import EnVariationalDiffusion
 from equivariant_diffusion.conditional_model import ConditionalDDPM, \
